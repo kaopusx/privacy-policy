@@ -51,16 +51,21 @@
   </style>
 </head>
 <body>
-/* 目录样式，全局生效（PC+手机） */
-ul.catalog {
-  list-style: none;       /* 去掉前面的点 */
-  margin-left: 2em;       /* 整体右移两格 */
-  padding: 0;             /* 清掉默认 padding 避免冲突 */
+<style>
+/* ……你前面的其他样式…… */
+
+/* 目录（PC+手机）：整体右移两格，序号+文字一起缩进 */
+ul.catalog{
+  list-style: none;           
+  padding: 0;                 
+  margin: 0;                  
+  margin-left: 2em !important; /* 关键：整体右移两格 */
 }
-ul.catalog li {
-  margin: .5em 0;        /* 上下间距 */
-  text-indent: 0;        /* 不要再缩进，保持序号和文字对齐 */
+ul.catalog li{
+  text-indent: 0 !important;   /* li 内部不再缩进，保证序号与文字对齐 */
+  margin: .5em 0;              
 }
+</style>
   <h1 class="title">陕西移动智慧政企公众号隐私政策</h1>
 
   <p>《陕西移动智慧政企公众号隐私政策》（下称“本政策”）仅适用于中国移动通信集团陕西有限公司（下称“陕西移动”）的智慧政企公众号服务（下称“本服务”）。</p>
