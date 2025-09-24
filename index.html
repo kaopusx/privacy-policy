@@ -37,7 +37,6 @@
 
     /* 目录：无黑点、顶格、行距适中 */
     .catalog{ list-style:none; margin:0; padding:0; }
-    .catalog li{ margin:.5em 0; }
     .catalog li::marker{ content:""; }
     .toc-line{ text-align:left; text-align-last:auto; }
 
@@ -53,15 +52,19 @@
       .title{ font-size:24px; line-height:1.35; margin:16px 0; }
       h2{ font-size:20px; margin-top:20px; }
       h3{ font-size:17px; margin-top:10px; }
-.catalog {
-  list-style: none;         /* 去掉前面的点 */
-  padding-left: 2em;        /* 整体右移两格（序号+文字一起缩进） */
-  margin: 0;
-}
   </style>
 </head>
 <body>
-
+/* 目录样式，全局生效（PC+手机） */
+ul.catalog {
+  list-style: none;       /* 去掉前面的点 */
+  margin-left: 2em;       /* 整体右移两格 */
+  padding: 0;             /* 清掉默认 padding 避免冲突 */
+}
+ul.catalog li {
+  margin: .5em 0;        /* 上下间距 */
+  text-indent: 0;        /* 不要再缩进，保持序号和文字对齐 */
+}
   <h1 class="title">陕西移动智慧政企公众号隐私政策</h1>
 
   <p>《陕西移动智慧政企公众号隐私政策》（下称“本政策”）仅适用于中国移动通信集团陕西有限公司（下称“陕西移动”）的智慧政企公众号服务（下称“本服务”）。</p>
