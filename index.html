@@ -53,13 +53,15 @@
       .title{ font-size:24px; line-height:1.35; margin:16px 0; }
       h2{ font-size:20px; margin-top:20px; }
       h3{ font-size:17px; margin-top:10px; }
+.catalog {
+  list-style: none;       /* 去掉前面的点 */
+  padding-left: 2em;      /* 整体右移两格（序号+文字一起缩进） */
+  margin: 0;
+}
 .catalog li {
-  text-indent: 2em;       /* 整体空两格（序号+文字一起缩进） */
+  text-indent: 0;         /* li 内部不再缩进 */
   margin: .5em 0;
-  text-align: justify;
-  text-justify: inter-ideograph;
-  text-align-last: left;
-    }
+}
   </style>
 </head>
 <body>
