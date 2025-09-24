@@ -25,29 +25,32 @@
       text-align-last:left;
     }
 
-    /* 需要顶格的元素（不缩进） */
-    h1,h2,h3,li,.title,.catalog,.no-indent{ text-indent:0 !important; }
+/* 需要顶格的元素（不缩进） */
+h1,h2,h3,li,.title,.catalog,.no-indent{ text-indent:0 !important; }
 
-    /* 标题样式（加粗、字号、间距） */
-    .title{ text-align:center; font-weight:800; font-size:28px; margin:20px 0; }
-    h2{ font-weight:800; font-size:22px; margin-top:26px; }
-    h3{ font-weight:800; font-size:18px; margin-top:12px; }
+/* 标题样式（加粗、字号、间距） */
+.title{ text-align:center; font-weight:800; font-size:28px; margin:20px 0; }
+h2{ font-weight:800; font-size:22px; margin-top:26px; }
+h3{ font-weight:800; font-size:18px; margin-top:12px; }
 
-    .uline{ text-decoration:underline; }
+.uline{ text-decoration:underline; }
 
-    /* 目录：无黑点、顶格、行距适中 */
-    /* 个别不需要两端对齐的段落（如目录标题、联系方式行） */
-    .no-justify{ text-align:left; text-align-last:auto; }
+/* 目录前的说明文字 */
+.catalog-intro {
+  text-indent: 2em;   /* 空两格 */
+  margin: .5em 0;     /* 上下间距 */
+}
 
-    /* iOS：禁止文字自动放大引起的行高/换行异常 */
-    html{ -webkit-text-size-adjust:100%; }
+/* 目录：无黑点、顶格、行距适中 */
+.catalog{ list-style:none; margin:0; padding:0; }
+.catalog li::marker{ content:""; }
+.toc-line{ text-align:left; text-align-last:auto; }
 
-    /* 移动端略收紧标题与边距，避免“看起来像空白” */
-    @media (max-width:480px){
-      body{ padding:0 16px; }
-      .title{ font-size:24px; line-height:1.35; margin:16px 0; }
-      h2{ font-size:20px; margin-top:20px; }
-      h3{ font-size:17px; margin-top:10px; }
+/* 个别不需要两端对齐的段落（如目录标题、联系方式行） */
+.no-justify{ text-align:left; text-align-last:auto; }
+
+/* iOS：禁止文字自动放大引起的行高/换行异常 */
+html{ -webkit-text-size-adjust:100%; }
   </style>
 </head>
 <body>
@@ -73,8 +76,7 @@ ul.catalog li{
   <p>陕西移动深知个人信息对您的重要性，陕西移动将恪守以下原则，保护您的个人信息：权责一致原则、目的明确原则、选择同意原则、最少够用原则、确保安全原则、主体参与原则、公开透明原则等。同时，陕西移动承诺将按照业界成熟的安全标准，采取相应的安全保护措施来保护您的个人信息。</p>
 
   <p>请您在使用本服务前，仔细阅读并了解本隐私政策。</p>
-<p class="no-indent">本隐私政策将帮助您了解以下内容：</p>
-
+<p class="catalog-intro">本隐私政策将帮助您了解以下内容：</p>
 <ul class="catalog">
   <li>一、提供服务收集的个人信息</li>
   <li>二、陕西移动智慧政企公众号服务平台简介</li>
