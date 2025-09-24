@@ -28,6 +28,8 @@
 .catalog li{ text-indent:0 !important; margin: .5em 0; }
 /* 兼容部分 iOS：把 li 的 marker 去掉 */
 .catalog li::marker{ content: ""; }
+/* 目录行：顶格显示，不缩进，不拉伸 */
+.toc-line{ text-indent:0 !important; text-align:left; text-align-last:auto; margin: .5em 0; }
 
 /* 2) iOS 不要自动放大文字导致行距/换行异常 */
 html{ -webkit-text-size-adjust: 100%; }
@@ -39,6 +41,20 @@ html{ -webkit-text-size-adjust: 100%; }
   h2{ font-size: 20px; margin-top:20px; }
   h3{ font-size: 17px; margin-top:10px; }
 }
+/* 正文：两端对齐，中文用 inter-ideograph；最后一行仍然靠左 */
+p{
+  text-indent: 2em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  text-align-last: left;            /* 兼容部分浏览器：最后一行不要拉伸 */
+}
+
+/* 个别不需要两端对齐的段落（如目录标题、联系方式行）可以加这个类 */
+.no-justify{ text-align:left; text-align-last:auto; }
+
+/* 目录用段落写时：不缩进（顶格） */
+.toc-line{ text-indent:0 !important; }
+
   </style>
 </head>
 <body>
@@ -53,12 +69,12 @@ html{ -webkit-text-size-adjust: 100%; }
 
 <p class="no-indent">本隐私政策将帮助您了解以下内容：</p>
 <ul class="catalog">
-  <li>一、提供服务收集的个人信息</li>
-  <li>二、陕西移动智慧政企公众号服务平台简介</li>
-  <li>三、我们如何保护、处理和公开披露您的个人信息</li>
-  <li>四、信息的存储</li>
-  <li>五、隐私政策如何变更</li>
-  <li>六、与我们联系</li>
+  <li class="toc-line">一、提供服务收集的个人信息</li>
+  <li class="toc-line">二、陕西移动智慧政企公众号服务平台简介</li>
+  <li class="toc-line">三、我们如何保护、处理和公开披露您的个人信息</li>
+  <li class="toc-line">四、信息的存储</li>
+  <li class="toc-line">五、隐私政策如何变更</li>
+  <li class="toc-line">六、与我们联系</li>
 </ul>
 
 <h2>一、提供服务收集的个人信息</h2>
